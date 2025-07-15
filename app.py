@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Load data
-df = pd.read_csv("campaign_data.csv")
+df = pd.read_csv("(DATA)Sheet1.csv")
 
 @app.route("/")
 def home():
@@ -23,7 +23,7 @@ def get_campaigns():
 @app.route("/api/refresh", methods=["POST"])
 def refresh_data():
     global df
-    df = pd.read_csv("campaign_data.csv")
+    df = pd.read_csv("(DATA)Sheet1.csv")
     return jsonify({"status": "refreshed"})
 
 # Run on specified port
